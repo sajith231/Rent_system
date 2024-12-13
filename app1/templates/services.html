@@ -1,4 +1,111 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+    .services-heading {
+        text-align: center;
+        margin-bottom: 50px;
+        color: #333;
+        
+    }
+
+    .services-heading h2 {
+        font-size: 36px;
+        font-weight: bold;
+        position: relative;
+        display: inline-block;
+    }
+
+    .services-heading h2::after {
+        content: '';
+        position: absolute;
+        width: 70%;
+        height: 4px;
+        background-color: #3498db;
+        bottom: -10px;
+        left: 15%;
+        border-radius: 2px;
+    }
+    .services-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 90px 20px;
+        /* background-color: #f9f9fc; */
+        font-family: 'Arial', sans-serif;
+    }
+    
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .service-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-icon {
+        font-size: 48px;
+        color: #3498db;
+        margin-bottom: 20px;
+    }
+
+    .service-title {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    .service-description {
+        color: #666;
+        line-height: 1.6;
+    }
+</style>
+
+<div class="services-section" >
+<div class="services-heading" >
+    <h2>Our Services</h2>
+</div>
+<div class="services-grid">
+    <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3 class="service-title">Laptop Rentals</h3>
+        <p class="service-description">
+            High-performance laptops for professionals, students, and businesses. 
+        </p>
+    </div>
+    <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3 class="service-title">Smartphone Rentals</h3>
+        <p class="service-description">
+            Latest smartphone models for short-term use.
+        </p>
+    </div>
+    <div class="service-card">
+        <div class="service-icon">📽️</div>
+        <h3 class="service-title">Projector & AV Equipment</h3>
+        <p class="service-description">
+            Professional-grade projectors, screens, and audio-visual 
+        </p>
+    </div>
+    <div class="service-card">
+        <div class="service-icon">📱💻</div>
+        <h3 class="service-title">Comprehensive Device Packages</h3>
+        <p class="service-description">
+            Customized device rental packages for businesses, conferences, workshops, and special projects. 
+    </div>
+</div>
+</div>
 
 {% endblock %}

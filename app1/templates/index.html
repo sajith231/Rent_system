@@ -1,3 +1,252 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+
+<style>
+/* Enhanced Button Styling */
+.styled-button {
+    background: linear-gradient(90deg, #0008ff, #008CBA); /* Gradient background */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-button:hover {
+    transform: scale(1.2); /* Enlarge on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+/* Shake Effect */
+.shake-button {
+    display: inline-block;
+    animation: shake 1.2s infinite;
+}
+@media (max-width: 768px) {
+    .styled-button:hover {
+        transform: scale(1.1); /* Slightly less enlargement for mobile */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow for mobile */
+    }
+
+    .shake-button {
+        animation: shake 0.8s infinite; /* Faster shake animation for mobile */
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+</style>
+
+<div style="position: relative; text-align: center; color: white;">
+    <img src="{% static 'images/banner.webp' %}" alt="Banner" style="width: 100%; height: auto;">
+    <div style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);">
+        <a href="#" class="shake-button" style="text-decoration: none;">
+            <button class="styled-button" style="margin-top: 230px;">Let's Go</button>
+        </a>
+    </div>
+</div>
+<style>
+
+</style>
+
+<style>
+    .about-section {
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        background-color: #f9f9fc;
+    }
+    
+    .about-content {
+        flex: 1;
+        padding-right: 3rem;
+    }
+    
+    .about-content h2 {
+        color: #2c3e50;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        border-bottom: 3px solid #3498db;
+        padding-bottom: 0.5rem;
+    }
+    
+    .about-content p {
+        color: #34495e;
+        line-height: 1.6;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .about-image {
+        flex: 1;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .about-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .about-image img:hover {
+        transform: scale(1.05);
+    }
+    
+    @media (max-width: 768px) {
+        .about-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    
+        .about-content {
+            padding-right: 0;
+            margin-bottom: 2rem;
+        }
+    }
+    </style>
+    
+    <div class="about-section">
+        <div class="about-content">
+            <h2>About Our Real  Rental Solutions</h2>
+            <p>
+                At [Company Name], we provide comprehensive real estate rental services designed to streamline your property search with precision and expertise. Our sophisticated platform connects discerning clients with premium rental properties across residential and commercial markets.
+            </p>
+            <p>
+                Leveraging cutting-edge technology and extensive market insights, our professional team delivers a tailored approach to meet the unique housing and business space requirements of our clients.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="{% static 'images/banner2.webp' %}" alt="Professional Real Estate Rental Services">
+        </div>
+    </div>
+    <style>
+        .services-heading {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+            
+        }
+
+        .services-heading h2 {
+            font-size: 36px;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .services-heading h2::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 4px;
+            background-color: #3498db;
+            bottom: -10px;
+            left: 15%;
+            border-radius: 2px;
+        }
+        .services-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            /* background-color: #f9f9fc; */
+            font-family: 'Arial', sans-serif;
+        }
+        
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+
+<div class="services-section" >
+    <div class="services-heading" >
+        <h2>Our Services</h2>
+    </div>
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3 class="service-title">Laptop Rentals</h3>
+            <p class="service-description">
+                High-performance laptops for professionals, students, and businesses. 
+            </p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📱</div>
+            <h3 class="service-title">Smartphone Rentals</h3>
+            <p class="service-description">
+                Latest smartphone models for short-term use.
+            </p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📽️</div>
+            <h3 class="service-title">Projector & AV Equipment</h3>
+            <p class="service-description">
+                Professional-grade projectors, screens, and audio-visual 
+            </p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📱💻</div>
+            <h3 class="service-title">Comprehensive Device Packages</h3>
+            <p class="service-description">
+                Customized device rental packages for businesses, conferences, workshops, and special projects. 
+        </div>
+    </div>
+</div>
 {% endblock %}
